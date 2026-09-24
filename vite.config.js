@@ -16,5 +16,5 @@ export default defineConfig({
    * photo would load on /gallery and 404 on /apartments/upper, which is one
    * level deeper. The same goes for the JS and CSS on a hard refresh.
    */
-  base: '/',
+  base: '/apartmani-nada/',
 })
