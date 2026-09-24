@@ -1,0 +1,883 @@
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+/* --- Nav ----------------------------------------------------------------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--abyss);
+  color: var(--paper);
+  border-bottom: 1px solid var(--rule-dark);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 4.25rem;
+}
+
+.nav__mark {
+  display: grid;
+  gap: 0.1rem;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.nav__mark-name {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  letter-spacing: 0.01em;
+}
+
+.nav__mark-place {
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--shoal);
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.9rem, 1.7vw, 1.6rem);
+  margin-left: auto;
+}
+
+/* Language switcher and the mobile menu button, always in the top bar. */
+.nav__end {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: clamp(1rem, 2.5vw, 2rem);
+}
+
+.langs {
+  display: flex;
+  flex: none;
+  overflow: hidden;
+  border: 1px solid var(--rule-dark);
+  border-radius: var(--radius);
+}
+
+.langs__btn {
+  padding: 0.45rem 0.6rem;
+  border: 0;
+  border-left: 1px solid var(--rule-dark);
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  color: rgba(242, 237, 225, 0.6);
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.langs__btn:first-child {
+  border-left: 0;
+}
+
+.langs__btn:hover {
+  color: var(--paper);
+  background: rgba(242, 237, 225, 0.08);
+}
+
+.langs__btn.is-active {
+  background: var(--oleander);
+  color: var(--paper);
+}
+
+.nav__link {
+  position: relative;
+  padding-block: 0.35rem;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(242, 237, 225, 0.72);
+  transition: color 0.2s var(--ease);
+}
+
+.nav__link:hover {
+  color: var(--paper);
+}
+
+.nav__link.is-active {
+  color: var(--paper);
+}
+
+.nav__link.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.15rem;
+  height: 1px;
+  background: var(--oleander);
+}
+
+.nav__toggle {
+  display: none;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--rule-dark);
+  border-radius: var(--radius);
+  background: none;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Seven nav items stop fitting on one line below about 1160px, so the menu
+   button takes over there rather than at a phone width. Add or remove a
+   route and this number is the one to re-check. */
+@media (max-width: 1160px) {
+  .nav__toggle {
+    display: block;
+  }
+
+  .nav__links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    display: grid;
+    gap: 0;
+    padding: 0 var(--gutter) 1rem;
+    background: var(--abyss);
+    border-bottom: 1px solid var(--rule-dark);
+  }
+
+  .nav__links[data-open='false'] {
+    display: none;
+  }
+
+  .nav__link {
+    padding-block: 0.95rem;
+    border-bottom: 1px solid var(--rule-dark);
+    font-size: 0.8rem;
+  }
+
+  .nav__link.is-active::after {
+    display: none;
+  }
+
+  .nav__link.is-active {
+    color: var(--oleander);
+  }
+}
+
+/* --- Hero ---------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--abyss);
+  color: var(--paper);
+  isolation: isolate;
+}
+
+.hero__chart {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Keeps the chart lines from competing with the headline on the left. */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    rgba(11, 37, 69, 0.94) 0%,
+    rgba(11, 37, 69, 0.7) 42%,
+    rgba(11, 37, 69, 0.18) 78%
+  );
+}
+
+@media (max-width: 720px) {
+  .hero::after {
+    background: linear-gradient(
+      170deg,
+      rgba(11, 37, 69, 0.86) 0%,
+      rgba(11, 37, 69, 0.72) 55%,
+      rgba(11, 37, 69, 0.3) 100%
+    );
+  }
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: clamp(1.4rem, 3vw, 2.2rem);
+  padding-block: clamp(4.5rem, 13vh, 9rem);
+  max-width: 40rem;
+}
+
+.hero__title {
+  text-wrap: balance;
+}
+
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: var(--step--1);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--shoal);
+}
+
+.hero__facts li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero__facts li + li::before {
+  content: '';
+  flex: none;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* --- Chart drawing ------------------------------------------------------- */
+
+.chart__land {
+  fill: rgba(242, 237, 225, 0.055);
+}
+
+.chart__coast {
+  fill: none;
+  stroke: rgba(242, 237, 225, 0.5);
+  stroke-width: 1.4;
+}
+
+.chart__isobath {
+  fill: none;
+  stroke: rgba(242, 237, 225, 0.2);
+  stroke-width: 1;
+}
+
+.chart__isobath--deep {
+  stroke: rgba(242, 237, 225, 0.13);
+  stroke-dasharray: 7 5;
+}
+
+/* Dash length is set per path in SeaChart.jsx, because each contour is a
+   different length and a shared value would cut the short ones short. */
+.chart__draw {
+  animation: chart-draw 2.6s var(--ease) forwards;
+}
+
+.chart__soundings {
+  fill: rgba(242, 237, 225, 0.4);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15px;
+  opacity: 0;
+  animation: chart-fade 1.4s var(--ease) 1.5s forwards;
+}
+
+.chart__marker {
+  opacity: 0;
+  animation: chart-fade 1s var(--ease) 2.2s forwards;
+}
+
+.chart__marker-ring {
+  fill: none;
+  stroke: var(--oleander);
+  stroke-width: 1.5;
+}
+
+.chart__marker-dot {
+  fill: var(--oleander);
+}
+
+.chart__marker-leader {
+  stroke: var(--oleander);
+  stroke-width: 1;
+}
+
+.chart__marker-text {
+  fill: var(--paper);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.chart__swell {
+  animation: chart-swell 19s ease-in-out infinite;
+}
+
+@keyframes chart-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes chart-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes chart-swell {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart__draw {
+    stroke-dashoffset: 0;
+  }
+  .chart__soundings,
+  .chart__marker {
+    opacity: 1;
+  }
+}
+
+/* --- Soundings list ------------------------------------------------------ */
+
+.soundings {
+  border-top: 1px solid var(--rule-light);
+}
+
+.soundings__row {
+  display: grid;
+  grid-template-columns: minmax(5.5rem, 8rem) 1fr;
+  align-items: baseline;
+  gap: clamp(1rem, 4vw, 3rem);
+  padding-block: clamp(0.9rem, 2vw, 1.3rem);
+  border-bottom: 1px solid var(--rule-light);
+}
+
+.soundings__depth {
+  font-size: var(--step-2);
+  line-height: 1;
+  color: var(--oleander);
+}
+
+.soundings__label {
+  font-size: var(--step-0);
+}
+
+.soundings__note {
+  margin-top: 1.5rem;
+  font-size: var(--step--1);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* --- Plates (photos, or engraved placeholders) --------------------------- */
+
+.plate {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.plate__frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper-deep);
+  border: 1px solid var(--rule-light);
+  border-radius: var(--radius);
+}
+
+.band--deep .plate__frame {
+  background: var(--shelf);
+  border-color: var(--rule-dark);
+}
+
+.plate__frame img,
+.plate__frame svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.plate--wide .plate__frame {
+  aspect-ratio: 3 / 2;
+}
+.plate--square .plate__frame {
+  aspect-ratio: 1 / 1;
+}
+.plate--tall .plate__frame {
+  aspect-ratio: 3 / 4;
+}
+
+.plate__caption {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+
+.band--deep .plate__caption {
+  color: var(--shoal);
+}
+
+.plate__no {
+  font-family: var(--font-display);
+  font-style: italic;
+  opacity: 0.75;
+}
+
+/* The placeholder engraving itself. */
+.plate__stroke {
+  vector-effect: non-scaling-stroke;
+  fill: none;
+  stroke: rgba(11, 37, 69, 0.28);
+  stroke-width: 1;
+}
+
+.band--deep .plate__stroke {
+  stroke: rgba(242, 237, 225, 0.3);
+}
+
+.plate__hint {
+  fill: rgba(11, 37, 69, 0.35);
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.band--deep .plate__hint {
+  fill: rgba(242, 237, 225, 0.4);
+}
+
+/* --- Footer -------------------------------------------------------------- */
+
+.footer {
+  background: var(--abyss);
+  color: var(--paper);
+  padding-block: clamp(3rem, 6vw, 4.5rem) 2rem;
+}
+
+.footer .label {
+  color: var(--shoal);
+}
+
+.footer__grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+.footer__title {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  line-height: 1.1;
+}
+
+.footer__coords {
+  margin-top: 0.6rem;
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  color: var(--shoal);
+}
+
+.footer__list {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  font-size: var(--step-0);
+}
+
+.footer__list a {
+  text-decoration: none;
+  color: rgba(242, 237, 225, 0.8);
+  transition: color 0.2s var(--ease);
+}
+
+.footer__list a:hover {
+  color: var(--oleander);
+}
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule-dark);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--shoal);
+}
+
+/* --- Form ---------------------------------------------------------------- */
+
+.form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.form__row {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .form__row--two {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.75em 0.85em;
+  border: 1px solid var(--rule-light);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  transition: border-color 0.2s var(--ease);
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: var(--ink-soft);
+}
+
+.field textarea {
+  min-height: 8.5rem;
+  resize: vertical;
+}
+
+.field__error {
+  font-size: var(--step--1);
+  color: var(--oleander);
+}
+
+.form__note {
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  max-width: 48ch;
+}
+
+/* --- House plan ---------------------------------------------------------- */
+
+.plan {
+  width: 100%;
+  height: auto;
+}
+
+.plan__floor {
+  cursor: pointer;
+}
+
+.plan__fill {
+  fill: rgba(11, 37, 69, 0.035);
+  transition: fill 0.25s var(--ease);
+}
+
+.plan__wall {
+  fill: none;
+  stroke: rgba(11, 37, 69, 0.55);
+  stroke-width: 1.4;
+  transition: stroke 0.25s var(--ease);
+}
+
+.plan__div {
+  fill: none;
+  stroke: rgba(11, 37, 69, 0.3);
+  stroke-width: 1;
+}
+
+.plan__outdoor {
+  fill: none;
+  stroke: rgba(11, 37, 69, 0.35);
+  stroke-width: 1;
+  stroke-dasharray: 5 4;
+}
+
+.plan__hatch {
+  fill: url(#plan-hatch);
+}
+
+.plan__hatch-line {
+  stroke: rgba(11, 37, 69, 0.16);
+  stroke-width: 1;
+}
+
+.plan__ground {
+  stroke: rgba(11, 37, 69, 0.3);
+  stroke-width: 1.4;
+}
+
+.plan__name {
+  fill: var(--abyss);
+  font-family: var(--font-display);
+  font-size: 15px;
+}
+
+.plan__room {
+  fill: rgba(11, 37, 69, 0.62);
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  letter-spacing: 0.02em;
+}
+
+.plan__room--band,
+.plan__room--tight {
+  font-size: 8.5px;
+}
+
+/* The hallway really is that small, so its label has to be. */
+.plan__room--micro {
+  font-size: 7px;
+}
+
+/* The way in, off the terrace */
+.plan__entry {
+  fill: none;
+  stroke: var(--oleander);
+  stroke-width: 1.2;
+}
+
+.plan__floor:hover .plan__fill,
+.plan__floor:focus-visible .plan__fill,
+.plan__floor.is-active .plan__fill {
+  fill: rgba(217, 90, 134, 0.13);
+}
+
+.plan__floor:hover .plan__wall,
+.plan__floor:focus-visible .plan__wall,
+.plan__floor.is-active .plan__wall {
+  stroke: var(--oleander);
+}
+
+.plan__floor:focus-visible {
+  outline: 2px solid var(--oleander);
+  outline-offset: 2px;
+}
+
+/* --- Unit card ----------------------------------------------------------- */
+
+.unit-card {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+.unit-card__body {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+}
+
+.unit-card__name {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  line-height: 1.1;
+}
+
+.unit-card__tagline {
+  margin: 0;
+  max-width: 32ch;
+  color: var(--ink-soft);
+}
+
+.band--deep .unit-card__tagline {
+  color: rgba(242, 237, 225, 0.75);
+}
+
+.unit-card__cta {
+  margin-top: 0.25rem;
+}
+
+/* --- Pill list: short facts, side by side -------------------------------- */
+
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pill-list li {
+  padding: 0.3em 0.75em;
+  border: 1px solid var(--rule-light);
+  border-radius: var(--radius);
+  font-size: var(--step--1);
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+
+.pill-list--deep li,
+.band--deep .pill-list li {
+  border-color: var(--rule-dark);
+  color: rgba(242, 237, 225, 0.8);
+}
+
+/* --- Form hint ----------------------------------------------------------- */
+
+.field__hint {
+  margin: 0;
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+
+/* --- An openable plate --------------------------------------------------- */
+
+button.plate__frame {
+  display: block;
+  width: 100%;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: zoom-in;
+}
+
+.plate__frame img {
+  transition: transform 0.5s var(--ease);
+}
+
+button.plate__frame:hover img,
+button.plate__frame:focus-visible img {
+  transform: scale(1.03);
+}
+
+/* --- Lightbox ------------------------------------------------------------ */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(3.5rem, 9vw, 5rem) clamp(1rem, 7vw, 5.5rem);
+  padding-top: max(clamp(3.5rem, 9vw, 5rem), env(safe-area-inset-top, 0px));
+  padding-bottom: max(clamp(3.5rem, 9vw, 5rem), env(safe-area-inset-bottom, 0px));
+  background: rgba(7, 24, 45, 0.95);
+  animation: lightbox-in 0.22s var(--ease);
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.lightbox__figure {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  margin: 0;
+  max-height: 100%;
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+}
+
+.lightbox__caption {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  font-size: var(--step--1);
+  color: rgba(242, 237, 225, 0.72);
+  text-align: center;
+}
+
+.lightbox__no {
+  flex: none;
+  color: var(--shoal);
+}
+
+.lightbox__btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  padding: 0;
+  border: 1px solid var(--rule-dark);
+  border-radius: 50%;
+  background: rgba(11, 37, 69, 0.55);
+  color: var(--paper);
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.lightbox__btn:hover {
+  background: var(--oleander);
+  border-color: var(--oleander);
+}
+
+.lightbox__btn--prev,
+.lightbox__btn--next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox__btn--prev {
+  left: clamp(0.5rem, 2vw, 2rem);
+}
+
+.lightbox__btn--next {
+  right: clamp(0.5rem, 2vw, 2rem);
+}
+
+.lightbox__btn--close {
+  top: max(clamp(0.75rem, 2vw, 1.75rem), env(safe-area-inset-top, 0px));
+  right: clamp(0.5rem, 2vw, 2rem);
+}

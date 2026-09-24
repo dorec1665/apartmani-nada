@@ -1,0 +1,21 @@
+{
+  "name": "apartmani-nada",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Static site for a house with two holiday apartments on the Karin Sea, Croatia.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.8"
+  }
+}

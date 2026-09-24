@@ -1,0 +1,532 @@
+/* ==========================================================================
+   Page layouts
+   ========================================================================== */
+
+/* --- Page header (every page except Home) -------------------------------- */
+
+.page-head {
+  display: grid;
+  gap: 1rem;
+  max-width: 44rem;
+  padding-block: clamp(3rem, 7vw, 5.5rem) 0;
+}
+
+/* --- Two-column text + aside --------------------------------------------- */
+
+.split {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+@media (min-width: 900px) {
+  .split {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: start;
+  }
+  .split--aside-first > :first-child {
+    order: 2;
+  }
+}
+
+/* --- Plate grids --------------------------------------------------------- */
+
+.plate-grid {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+}
+
+.plate-strip {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+/* --- Rooms list ---------------------------------------------------------- */
+
+.rooms {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--rule-light);
+}
+
+.room {
+  display: grid;
+  gap: 0.6rem clamp(1.5rem, 5vw, 4rem);
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
+  border-bottom: 1px solid var(--rule-light);
+}
+
+@media (min-width: 800px) {
+  .room {
+    grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  }
+}
+
+.room__name {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.15;
+}
+
+.room__body {
+  color: var(--ink-soft);
+}
+
+/* --- Amenities ----------------------------------------------------------- */
+
+.amenities {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+}
+
+.amenity__group {
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule-light);
+}
+
+.band--deep .amenity__group {
+  border-color: var(--rule-dark);
+}
+
+.amenity__items {
+  display: grid;
+  gap: 0.45rem;
+  font-size: var(--step-0);
+  color: var(--ink-soft);
+}
+
+.band--deep .amenity__items {
+  color: rgba(242, 237, 225, 0.78);
+}
+
+.amenity__items li {
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  gap: 0.35rem;
+}
+
+.amenity__items li::before {
+  content: '—';
+  opacity: 0.5;
+}
+
+/* --- Rates table --------------------------------------------------------- */
+
+.rates {
+  border-top: 1px solid var(--rule-light);
+}
+
+.band--deep .rates,
+.band--deep .rate {
+  border-color: var(--rule-dark);
+}
+
+.rate {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0.35rem 1.5rem;
+  padding-block: 1.1rem;
+  border-bottom: 1px solid var(--rule-light);
+}
+
+.rate__period {
+  font-size: var(--step-0);
+}
+
+.rate__price {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.rate__min {
+  grid-column: 1 / -1;
+  font-size: var(--step--1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--shoal);
+}
+
+.rates-aside {
+  display: grid;
+  gap: 2rem;
+}
+
+.tick-list {
+  display: grid;
+  gap: 0.5rem;
+  font-size: var(--step-0);
+}
+
+.tick-list li {
+  display: grid;
+  grid-template-columns: 1.1rem 1fr;
+  gap: 0.4rem;
+}
+
+.tick-list li::before {
+  content: '·';
+  font-size: 1.4em;
+  line-height: 0.9;
+  color: var(--oleander);
+}
+
+/* --- Numbered journey (order genuinely matters here) --------------------- */
+
+.legs {
+  display: grid;
+  gap: 0;
+  counter-reset: leg;
+  border-top: 1px solid var(--rule-light);
+}
+
+.leg {
+  display: grid;
+  gap: 0.5rem clamp(1.25rem, 4vw, 2.5rem);
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
+  border-bottom: 1px solid var(--rule-light);
+  counter-increment: leg;
+}
+
+@media (min-width: 800px) {
+  .leg {
+    grid-template-columns: 3.5rem minmax(0, 14rem) minmax(0, 1fr);
+  }
+}
+
+.leg::before {
+  content: counter(leg, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--step-1);
+  color: var(--oleander);
+}
+
+.leg__stage {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.15;
+}
+
+.leg__body {
+  color: var(--ink-soft);
+}
+
+/* --- Quotes -------------------------------------------------------------- */
+
+.quotes {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+.quote {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule-light);
+}
+
+.band--deep .quote {
+  border-top-color: var(--rule-dark);
+}
+
+.quote__text {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.4;
+  max-width: 26ch;
+}
+
+.quote__who {
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.band--deep .quote__who {
+  color: var(--shoal);
+}
+
+/* --- Rules list ---------------------------------------------------------- */
+
+.rules {
+  display: grid;
+  gap: 1rem;
+  max-width: var(--measure);
+}
+
+.rules li {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: 0.5rem;
+  color: var(--ink-soft);
+}
+
+.rules li::before {
+  content: '—';
+  color: var(--oleander);
+}
+
+/* --- Contact details ----------------------------------------------------- */
+
+.details {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--paper-deep);
+  border-radius: var(--radius);
+}
+
+.detail {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.detail__value {
+  font-size: var(--step-1);
+  font-family: var(--font-display);
+  word-break: break-word;
+}
+
+.detail__value a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--oleander);
+}
+
+/* --- Closing call to action --------------------------------------------- */
+
+.closer {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: start;
+}
+
+.closer__title {
+  max-width: 24ch;
+  text-wrap: balance;
+}
+
+/* --- Not found ----------------------------------------------------------- */
+
+.notfound {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: start;
+  padding-block: clamp(4rem, 12vh, 8rem);
+}
+
+/* ==========================================================================
+   Small utilities that replace one-off inline styles
+   ========================================================================== */
+
+.after-grid {
+  margin-top: 2rem;
+}
+
+.prose__break {
+  margin-top: 2.5rem;
+}
+
+.closer__body {
+  color: rgba(242, 237, 225, 0.78);
+}
+
+.rates__note {
+  max-width: 46ch;
+  color: var(--shoal);
+}
+
+.aside__head {
+  margin-bottom: 0.9rem;
+}
+
+.detail__value--plain {
+  font-size: var(--step-0);
+  font-family: var(--font-body);
+}
+
+.detail__link {
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   Two apartments
+   ========================================================================== */
+
+/* The plan is a diagram, not a photo — it should not outgrow its column. */
+@media (min-width: 900px) {
+  .split--plan {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    align-items: center;
+  }
+}
+
+.unit-grid {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+.unit-grid--single {
+  max-width: 34rem;
+}
+
+.tick-list--spaced {
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+
+.page-head__actions {
+  margin: 0.5rem 0 0;
+}
+
+.page-head__back {
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-light);
+  padding-bottom: 2px;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.page-head__back:hover {
+  color: var(--oleander);
+  border-bottom-color: var(--oleander);
+}
+
+.rates-extras {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+/* --- Three-column rates table -------------------------------------------- */
+
+.rate-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.rate-table th,
+.rate-table td {
+  padding: 1rem 0.75rem;
+  border-bottom: 1px solid var(--rule-light);
+  vertical-align: baseline;
+  font-weight: 400;
+}
+
+.rate-table thead th {
+  padding-bottom: 0.7rem;
+  border-bottom-color: var(--ink-soft);
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.rate-table thead th:first-child,
+.rate-table tbody th {
+  padding-left: 0;
+}
+
+.rate-table tbody th {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.rate-table__period {
+  font-size: var(--step-0);
+}
+
+.rate-table__min {
+  font-size: var(--step--1);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.rate-table__price {
+  font-size: var(--step-1);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Below this the four columns stop fitting, so each season becomes a block
+   with its three prices labelled individually. */
+@media (max-width: 720px) {
+  .rate-table,
+  .rate-table tbody,
+  .rate-table tr,
+  .rate-table td,
+  .rate-table tbody th {
+    display: block;
+    width: 100%;
+  }
+
+  .rate-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .rate-table tr {
+    padding-block: 1.1rem;
+    border-bottom: 1px solid var(--rule-light);
+  }
+
+  .rate-table tbody th,
+  .rate-table td {
+    padding: 0;
+    border: 0;
+  }
+
+  .rate-table td {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .rate-table td::before {
+    content: attr(data-label);
+    font-size: var(--step--1);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .rate-table tbody th {
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* --- A page with nothing in it yet --------------------------------------- */
+
+.soon {
+  display: grid;
+  justify-items: start;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  padding-block: clamp(4rem, 15vh, 9rem);
+}
+
+.soon__rule {
+  width: min(100%, 22rem);
+}
+
+.soon__mark {
+  margin: 0;
+  font-size: var(--step-2);
+  line-height: 1;
+  color: var(--oleander);
+}

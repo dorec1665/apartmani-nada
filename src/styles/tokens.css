@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Design tokens
+   --------------------------------------------------------------------------
+   The palette is taken from a Croatian hydrographic sea chart: deep ink for
+   open water, paler blues for the shelf, warm chart paper for land, and the
+   pink of the oleander that lines every road on the coast as the one accent.
+   ========================================================================== */
+
+:root {
+  /* --- Colour ------------------------------------------------------------ */
+  --abyss: #0b2545;      /* open water, 40 m and below — primary dark ground */
+  --shelf: #17415e;      /* mid-depth — raised surfaces on dark sections */
+  --shoal: #3d7085;      /* shallow water — hairlines and muted text on dark */
+  --paper: #f2ede1;      /* chart paper — primary light ground */
+  --paper-deep: #e4dcc9; /* chart paper in shadow — light surfaces, rules */
+  --oleander: #d95a86;   /* the single accent */
+  --pine: #2c4a3b;       /* Aleppo pine — secondary tint, used sparingly */
+
+  /* Semantic aliases so components never reach for a raw colour name. */
+  --ink: var(--abyss);
+  --ink-soft: #4a5f78;
+  --rule-dark: rgba(242, 237, 225, 0.22);
+  --rule-light: rgba(11, 37, 69, 0.16);
+
+  /* --- Type -------------------------------------------------------------- */
+  --font-display: 'Bodoni Moda', 'Times New Roman', serif;
+  --font-body: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --step--1: clamp(0.76rem, 0.74rem + 0.1vw, 0.82rem);
+  --step-0: clamp(0.98rem, 0.95rem + 0.15vw, 1.06rem);
+  --step-1: clamp(1.18rem, 1.1rem + 0.4vw, 1.4rem);
+  --step-2: clamp(1.5rem, 1.32rem + 0.9vw, 2.1rem);
+  --step-3: clamp(2rem, 1.6rem + 2vw, 3.2rem);
+  --step-4: clamp(2.6rem, 1.8rem + 4vw, 5.4rem);
+
+  --tracking-label: 0.16em;
+
+  /* --- Space and shape --------------------------------------------------- */
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --measure: 62ch;
+  --band-y: clamp(3.5rem, 8vw, 7rem);
+  --radius: 2px; /* charts are engraved, not rounded */
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
