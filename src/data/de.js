@@ -8,7 +8,7 @@ export default {
   meta: {
     title: "Apartmani Nada · Vrulje, Gornji Karin",
     description:
-      "Zwei getrennte Ferienwohnungen in einem Haus am Ufer des Karinsko more, in Vrulje bei Gornji Karin. Ein Geschoss oder das ganze Haus. Direkt bei den Eigentümern buchen.",
+      "Zwei getrennte Ferienwohnungen in einem Haus am Karinsko more, in Vrulje bei Gornji Karin. Ein Geschoss oder das ganze Haus. Direkt bei den Eigentümern buchen.",
   },
 
   money: { before: "", after: " €" },
@@ -45,7 +45,7 @@ export default {
   hero: {
     eyebrow: "44°08′43″N · 15°37′59″E · Karinsko more",
     title: "Wo Süßwasser ins Meer aufsteigt",
-    lead: "Vrulje heißen die Süßwasserquellen, die hier vom Meeresboden aufsteigen — nach ihnen ist dieser Küstenstreifen benannt. Das Haus steht wenige Schritte vom Kies entfernt, mit zwei getrennten Wohnungen, eine pro Geschoss. Nehmen Sie eine — oder das ganze Haus.",
+    lead: "Vrulje heißen die Süßwasserquellen, die hier vom Meeresboden aufsteigen — nach ihnen ist dieser Küstenstreifen benannt. Das Haus steht fünfhundert Meter vom Kiesstrand entfernt, mit zwei getrennten Wohnungen, eine pro Geschoss. Nehmen Sie eine — oder das ganze Haus.",
     facts: [
       "Zwei Wohnungen",
       "Je 4 Personen",
@@ -59,9 +59,9 @@ export default {
   soundings: {
     label: "Entfernungen",
     title: "Von der Haustür aus",
-    note: "Mit dem Auto gemessen, außer der ersten — die geht man barfuß.",
+    note: "Mit dem Auto gemessen, außer der ersten — die geht man zu Fuß.",
     items: [
-      { depth: "40 m", label: "Zum Kies und ins Wasser" },
+      { depth: "500 m", label: "Zum Strand und ins Wasser" },
       { depth: "1,2 km", label: "Gornji Karin, Laden und ein Café" },
       { depth: "1,5 km", label: "Franziskanerkloster aus dem 15. Jahrhundert" },
       { depth: "12 km", label: "Obrovac und der Zrmanja-Canyon" },
@@ -74,9 +74,9 @@ export default {
     label: "Kurz gesagt",
     title: "Ein Haus, zwei Wohnungen, keine Rezeption",
     body: [
-      "Das Karinsko more ist eine fast geschlossene Bucht, flach und warm, mit dem Novigradsko more nur durch einen kaum hundert Meter breiten Kanal verbunden. Das Haus steht am Ufer in Vrulje, an einem einen halben Kilometer langen Kiesstrand, an dem selbst im August selten mehr als ein Dutzend Menschen liegen. Darin gibt es zwei Wohnungen, eine pro Geschoss.",
-      "Die Geschosse sind vollständig getrennt. Jedes hat seinen eigenen Eingang, seine eigene Küche, ein Wohnzimmer, zwei Schlafzimmer und ein Bad. Geteilt wird nichts außer der Wäscheleine hinter dem Haus. Wenn Sie nur ein Geschoss nehmen, kann das andere belegt sein — Sie kommen und gehen, ohne jemandem zu begegnen.",
-      "Wir führen das nicht wie ein Hotel. Tonči bringt Ihnen die Schlüssel an die Tür, zeigt, welche Fensterläden zu schließen sind, wenn der Jugo weht, und lässt Sie ansonsten in Ruhe. Wenn Sie eine Empfehlung wollen, fragen Sie — er hat zu jeder Bucht der Insel eine Meinung.",
+      "Das Karinsko more ist eine fast geschlossene Bucht, flach und warm, mit dem Novigradsko more nur durch einen kaum hundert Meter breiten Kanal verbunden. Das Haus steht in Vrulje, fünfhundert Meter von einem Kiesstrand. Darin gibt es zwei Wohnungen, eine pro Geschoss.",
+      "Die Geschosse sind vollständig getrennt und teilen nichts. Jedes hat seinen eigenen Eingang, seine eigene Küche, ein Wohnzimmer, zwei Schlafzimmer und ein Bad. Wenn Sie nur ein Geschoss nehmen, kann das andere belegt sein — Sie kommen und gehen, ohne jemandem zu begegnen.",
+      "Wir führen das nicht wie ein Hotel. Wir empfangen Sie mit den Schlüsseln an der Tür, zeigen Ihnen das Haus und lassen Sie dann in Ruhe. Wenn Sie einen Tipp möchten — wo man badet, isst oder einen Ausflug macht —, fragen Sie einfach.",
     ],
   },
 
@@ -124,8 +124,6 @@ export default {
     glimpseLabel: "Ein Blick",
     glimpseTitle: "Das Haus und was drumherum liegt",
     glimpseLink: "Die ganze Galerie ansehen",
-    guestsLabel: "Gäste",
-    guestsTitle: "Was Leute hinterher schreiben",
   },
 
   /* --- Die zwei Wohnungen ------------------------------------------------ */
@@ -319,20 +317,6 @@ export default {
     "Gut erzogene Hunde sind kostenlos willkommen. Sagen Sie es vorher, dann rollen wir den guten Teppich zusammen.",
   ],
 
-  testimonials: [
-    {
-      quote: "Wir hatten im August das Erdgeschoss. Frühstück, Mittag- und Abendessen — alles auf der Terrasse, kein einziges Mal drinnen am Tisch.",
-      name: "Marta",
-      from: "Krakau",
-      when: "August",
-    },
-    {
-      quote: "Wir zu acht im ganzen Haus. Die Kinder oben, wir unten, und abends alle an einem Tisch.",
-      name: "Daniel & Ute",
-      from: "Leipzig",
-      when: "September",
-    },
-  ],
 
   gallery: {
     label: "Galerie",
@@ -392,7 +376,7 @@ export default {
   contact: {
     label: "Kontakt",
     title: "Termine anfragen",
-    lead: "Ivana und Tonči lesen die Mails jeden Abend. Meist antworten wir noch am selben Abend, immer aber innerhalb eines Tages.",
+    lead: "Wir lesen die Mails jeden Abend. Meist antworten wir noch am selben Abend, immer aber innerhalb eines Tages.",
     fields: {
       name: "Ihr Name",
       email: "E-Mail",

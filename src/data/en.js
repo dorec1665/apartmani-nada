@@ -8,7 +8,7 @@ export default {
   meta: {
     title: "Apartmani Nada · Vrulje, Gornji Karin",
     description:
-      "Two separate apartments in a house on the shore of the Karin Sea, at Vrulje near Gornji Karin. Take one floor or the whole house. Booked directly with the owners.",
+      "Two separate apartments in a house by the Karin Sea, at Vrulje near Gornji Karin. Take one floor or the whole house. Booked directly with the owners.",
   },
 
   money: { before: "€", after: "" },
@@ -45,7 +45,7 @@ export default {
   hero: {
     eyebrow: "44°08′43″N · 15°37′59″E · The Karin Sea",
     title: "Where fresh water rises into the sea",
-    lead: "Vrulje are the freshwater springs that rise through the seabed here, and they give this stretch of shore its name. The house stands a few steps from the shingle, with two separate apartments, one on each floor. Take one, or take the whole house.",
+    lead: "Vrulje are the freshwater springs that rise through the seabed here, and they give this stretch of shore its name. The house stands five hundred metres from the shingle beach, with two separate apartments, one on each floor. Take one, or take the whole house.",
     facts: [
       "Two apartments",
       "Each sleeps 4",
@@ -59,9 +59,9 @@ export default {
   soundings: {
     label: "Distances",
     title: "From the front door",
-    note: "Measured by car, except the first — that one you walk barefoot.",
+    note: "Measured by car, except the first — that one you walk.",
     items: [
-      { depth: "40 m", label: "To the shingle and the water" },
+      { depth: "500 m", label: "To the beach and the water" },
       { depth: "1.2 km", label: "Gornji Karin, the shop and a café" },
       { depth: "1.5 km", label: "The 15th-century Franciscan monastery" },
       { depth: "12 km", label: "Obrovac and the Zrmanja canyon" },
@@ -74,9 +74,9 @@ export default {
     label: "The short version",
     title: "One house, two apartments, no reception desk",
     body: [
-      "The Karin Sea is an almost closed bay, shallow and warm, joined to the Novigrad Sea by a channel barely a hundred metres wide. The house is on the shore at Vrulje, on half a kilometre of shingle beach where even in August you rarely see more than a dozen people. There are two apartments in it, one on each floor.",
-      "The floors are completely separate. Each has its own entrance, its own kitchen, living room, two bedrooms and bathroom. Nothing is shared except the washing line behind the house. If you take only one floor the other may be occupied — you will come and go without meeting anybody.",
-      "We do not run this like a hotel. Tonči meets you at the door with the keys, shows you which shutters to close when the jugo blows, and leaves you alone unless you want a recommendation. If you do, ask — he has opinions about every bay on the island.",
+      "The Karin Sea is an almost closed bay, shallow and warm, joined to the Novigrad Sea by a channel barely a hundred metres wide. The house is at Vrulje, five hundred metres from a shingle beach. There are two apartments in it, one on each floor.",
+      "The floors are completely separate and share nothing. Each has its own entrance, its own kitchen, living room, two bedrooms and bathroom. If you take only one floor the other may be occupied — you will come and go without meeting anybody.",
+      "We do not run this like a hotel. We meet you at the door with the keys, show you around, and then leave you in peace. If you want a tip — where to swim, where to eat, where to spend a day — just ask.",
     ],
   },
 
@@ -124,8 +124,6 @@ export default {
     glimpseLabel: "A glimpse",
     glimpseTitle: "The house and what is around it",
     glimpseLink: "See the whole gallery",
-    guestsLabel: "Guests",
-    guestsTitle: "What people write afterwards",
   },
 
   /* --- The two apartments ------------------------------------------------ */
@@ -319,20 +317,6 @@ export default {
     "Well-behaved dogs are welcome at no charge. Tell us in advance so we roll up the good rug.",
   ],
 
-  testimonials: [
-    {
-      quote: "We took the lower floor in August. Breakfast, lunch and dinner — all of it on the terrace, never once at the table indoors.",
-      name: "Marta",
-      from: "Kraków",
-      when: "August",
-    },
-    {
-      quote: "Eight of us in the whole house. Children upstairs, us downstairs, everyone at the same table in the evening.",
-      name: "Daniel & Ute",
-      from: "Leipzig",
-      when: "September",
-    },
-  ],
 
   gallery: {
     label: "Gallery",
@@ -392,7 +376,7 @@ export default {
   contact: {
     label: "Contact",
     title: "Ask about dates",
-    lead: "Ivana and Tonči read the email every evening. We usually reply the same night, and always within a day.",
+    lead: "We read the email every evening. We usually reply the same night, and always within a day.",
     fields: {
       name: "Your name",
       email: "Email",

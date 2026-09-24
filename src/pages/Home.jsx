@@ -64,22 +64,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- The two apartments ------------------------------------------ */}
-      <section className="band band--paper">
-        <div className="shell">
-          <div className="section-head section-head--wide">
-            <p className="label">{t.home.unitsLabel}</p>
-            <h2>{t.home.unitsTitle}</h2>
-            <p>{t.home.unitsLead}</p>
-          </div>
-          <div className="unit-grid">
-            {units.map((unit) => (
-              <UnitCard key={unit.id} unitId={unit.id} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* --- The house itself -------------------------------------------- */}
       <section className="band band--deep">
         <div className="shell">
@@ -100,21 +84,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- Guests ------------------------------------------------------ */}
+      {/* --- The two apartments ------------------------------------------ */}
       <section className="band band--paper">
         <div className="shell">
-          <div className="section-head">
-            <p className="label">{t.home.guestsLabel}</p>
-            <h2>{t.home.guestsTitle}</h2>
+          <div className="section-head section-head--wide">
+            <p className="label">{t.home.unitsLabel}</p>
+            <h2>{t.home.unitsTitle}</h2>
+            <p>{t.home.unitsLead}</p>
           </div>
-          <div className="quotes">
-            {t.testimonials.map((item) => (
-              <blockquote className="quote" key={item.name}>
-                <p className="quote__text">{item.quote}</p>
-                <footer className="quote__who">
-                  {item.name} · {item.from} · {item.when}
-                </footer>
-              </blockquote>
+          <div className="unit-grid">
+            {units.map((unit) => (
+              <UnitCard key={unit.id} unitId={unit.id} />
             ))}
           </div>
         </div>
