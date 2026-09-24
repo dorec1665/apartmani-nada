@@ -8,7 +8,7 @@ export default {
   meta: {
     title: "Apartmani Nada · Vrulje, Gornji Karin",
     description:
-      "Dva odvojena apartmana u kući na obali Karinskog mora, u Vruljama kod Gornjeg Karina. Uzmite jedan kat ili cijelu kuću. Rezervira se direktno kod vlasnika.",
+      "Dva odvojena apartmana u kući uz Karinsko more, u Vruljama kod Gornjeg Karina. Uzmite jedan kat ili cijelu kuću. Rezervira se direktno kod vlasnika.",
   },
 
   money: { before: "", after: " €" },
@@ -45,7 +45,7 @@ export default {
   hero: {
     eyebrow: "44°08′43″N · 15°37′59″E · Karinsko more",
     title: "Gdje slatka voda izvire u more",
-    lead: "Vrulje su podmorski izvori slatke vode — po njima se zove i ovaj komad obale. Kuća je nekoliko koraka od šljunka, s dva odvojena apartmana, po jedan na svakom katu. Uzmite jedan ili cijelu kuću.",
+    lead: "Vrulje su podmorski izvori slatke vode — po njima se zove i ovaj komad obale. Kuća je petsto metara od šljunčane plaže, s dva odvojena apartmana, po jedan na svakom katu. Uzmite jedan ili cijelu kuću.",
     facts: [
       "Dva apartmana",
       "Svaki za 4 osobe",
@@ -59,9 +59,9 @@ export default {
   soundings: {
     label: "Udaljenosti",
     title: "Od ulaznih vrata",
-    note: "Izmjereno autom, osim prvoga — do mora se ide bos.",
+    note: "Izmjereno autom, osim prvoga — do plaže se ide pješice.",
     items: [
-      { depth: "40 m", label: "Do šljunka i mora" },
+      { depth: "500 m", label: "Do plaže i mora" },
       { depth: "1,2 km", label: "Gornji Karin, trgovina i kafić" },
       { depth: "1,5 km", label: "Franjevački samostan iz 15. stoljeća" },
       { depth: "12 km", label: "Obrovac i kanjon Zrmanje" },
@@ -74,9 +74,9 @@ export default {
     label: "Ukratko",
     title: "Jedna kuća, dva apartmana, bez recepcije",
     body: [
-      "Karinsko more je gotovo zatvoren zaljev, plitak i topao, spojen s Novigradskim morem kanalom širokim jedva stotinjak metara. Kuća je na obali u Vruljama, uz šljunčanu plažu dugu pola kilometra na kojoj i u kolovozu rijetko ima više od desetak ljudi. U kući su dva apartmana, po jedan na svakom katu.",
-      "Katovi su potpuno odvojeni. Svaki ima svoj ulaz, svoju kuhinju, dnevni boravak, dvije spavaonice i kupaonicu. Ne dijeli se ništa osim žice za rublje iza kuće. Ako uzmete samo jedan kat, drugi može biti zauzet — ući ćete i izaći a da nikoga ne sretnete.",
-      "Ovo ne vodimo kao hotel. Tonči vas dočeka na vratima s ključevima, pokaže koje škure zatvoriti kad zapuše jugo, i pusti vas na miru ako ne tražite savjet. Ako tražite — pitajte. O svakoj uvali na otoku ima mišljenje.",
+      "Karinsko more je gotovo zatvoren zaljev, plitak i topao, spojen s Novigradskim morem kanalom širokim jedva stotinjak metara. Kuća je u Vruljama, petsto metara od šljunčane plaže. U kući su dva apartmana, po jedan na svakom katu.",
+      "Katovi su potpuno odvojeni i ne dijele ništa. Svaki ima svoj ulaz, svoju kuhinju, dnevni boravak, dvije spavaonice i kupaonicu. Ako uzmete samo jedan kat, drugi može biti zauzet — ući ćete i izaći a da nikoga ne sretnete.",
+      "Ovo ne vodimo kao hotel. Dočekat ćemo vas na vratima s ključevima, pokazati vam kuću i pustiti vas na miru. Ako trebate savjet — gdje na kupanje, na večeru ili na izlet — samo pitajte.",
     ],
   },
 
@@ -124,8 +124,6 @@ export default {
     glimpseLabel: "Kratki pogled",
     glimpseTitle: "Kuća i ono oko nje",
     glimpseLink: "Pogledajte cijelu galeriju",
-    guestsLabel: "Gosti",
-    guestsTitle: "Što ljudi napišu poslije",
   },
 
   /* --- Dva apartmana ----------------------------------------------------- */
@@ -319,20 +317,6 @@ export default {
     "Dobro odgojeni psi su dobrodošli bez naplate. Recite nam unaprijed da smotamo dobar tepih.",
   ],
 
-  testimonials: [
-    {
-      quote: "Uzeli smo donji kat u kolovozu. Doručak, ručak i večera — sve na terasi, nijednom za stolom unutra.",
-      name: "Marta",
-      from: "Krakov",
-      when: "kolovoz",
-    },
-    {
-      quote: "Nas osmero u cijeloj kući. Djeca gore, mi dolje, i svi za istim stolom navečer.",
-      name: "Daniel i Ute",
-      from: "Leipzig",
-      when: "rujan",
-    },
-  ],
 
   gallery: {
     label: "Galerija",
@@ -392,7 +376,7 @@ export default {
   contact: {
     label: "Kontakt",
     title: "Pitajte o datumima",
-    lead: "Ivana i Tonči čitaju mail svake večeri. Obično odgovorimo istu noć, a uvijek u roku od jednog dana.",
+    lead: "Mail čitamo svake večeri. Obično odgovorimo istu noć, a uvijek u roku od jednog dana.",
     fields: {
       name: "Vaše ime",
       email: "E-mail",
